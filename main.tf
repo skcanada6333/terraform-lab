@@ -1,10 +1,9 @@
 terraform {
   required_providers {
-    azurerm = { 
-        source = "hashicorp/azurerm"
-        version = "3.17.0"
-    } 
-   
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "3.34.0"
+    }
   }
 }
 provider "azurerm" {
@@ -24,13 +23,3 @@ resource "azurerm_virtual_network" "myvngit" {
   address_space = [ "10.0.0.0/16" ]
 }
 
-# create subnet in myvngit
-resource "azurerm_subnet" "subnetA" {
-    name ="subnetA"
-    virtual_network_name = "myvngit"
-    resource_group_name = "rsgit"
-    address_prefixes = ["10.0.1.0/24"]
-
-
-  
-}
